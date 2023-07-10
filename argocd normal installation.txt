@@ -1,0 +1,6 @@
+Follow this link to install the argocd: https://argo-cd.readthedocs.io/en/stable/
+
+-> After installing the argocd pods, run the below command to access the argocd GUI
+
+-> kubectl port-forward svc/argocd-server -n argocd --address 0.0.0.0 8080:443
+Note: --address 0.0.0.0 => binds the argocd port 8080 to the hostport 8080, so that we can access it directly from the internet using "http://ip:8080"
