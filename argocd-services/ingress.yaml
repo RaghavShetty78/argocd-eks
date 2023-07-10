@@ -5,7 +5,7 @@ metadata:
   namespace: argocd
 spec:
   rules:
-    - host: argocd.example.com
+    - host: vinodpatlolla.online
       http:
         paths:
           - pathType: Prefix
