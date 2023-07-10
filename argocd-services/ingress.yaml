@@ -14,13 +14,19 @@ spec:
     - http:
         paths:
         - path: /*
+          pathType: ImplementationSpecific
           backend:
-            serviceName: ssl-redirect
-            servicePort: use-annotation
+            service:
+              name: ssl-redirect
+              port: 
+                name: use-annotation
         - path: /*
+          pathType: ImplementationSpecific
           backend:
-            serviceName: argocd-server
-            servicePort: 8080
+            service:
+              name: argocd-server
+              port: 
+                number: 8080
 
 
 # apiVersion: networking.k8s.io/v1
