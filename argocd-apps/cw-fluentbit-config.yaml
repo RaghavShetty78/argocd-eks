@@ -4,12 +4,12 @@ metadata:
   name: cwagent-fluentbit-config
   namespace: argocd
 data:
-  cluster_name: test_cluster
-  CLUSTER_NAME: test_cluster
-  region_name: us-east-1
+  cluster_name: "test_cluster"
+  CLUSTER_NAME: "test_cluster"
+  region_name: "us-east-1"
   http_server_port: "2020"
-  read_from_head: Off
-  READ_FROM_HEAD: Off
-  read_from_tail: On
-  READ_FROM_TAIL: On
-  http_server_toggle: On
+  read_from_head: "Off"
+  READ_FROM_HEAD: "Off"
+  read_from_tail: "On"
+  READ_FROM_TAIL: "On"
+  http_server_toggle: "On"
