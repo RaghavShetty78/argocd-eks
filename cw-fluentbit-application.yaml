@@ -9,6 +9,27 @@ spec:
     repoURL: https://github.com/RaghavShetty78/argocd-eks.git
     targetRevision: HEAD
     path: container-insights/cwagent-fluent-bit-quickstart.yaml
+    plugin:
+      env:
+        - name: cluster_name
+          value: "test_cluster"
+        - name: CLUSTER_NAME
+          value: "test_cluster"
+        - name: region_name
+          value: "us-east-1"
+        - name: http_server_port
+          value: "2020"
+        - name: read_from_head
+          value: "Off"
+        - name: READ_FROM_HEAD
+          value: "Off"
+        - name: read_from_tail
+          value: "On"
+        - name: READ_FROM_TAIL
+          value: "On"
+        - name: http_server_toggle
+          value: "On"
+          
   destination: 
     server: https://kubernetes.default.svc
     # namespace: aws-otel-eks
@@ -20,26 +41,7 @@ spec:
     automated:
       selfHeal: true
       prune: true
-    cplugin:
-    env:
-      - name: cluster_name
-        value: "test_cluster"
-      - name: CLUSTER_NAME
-        value: "test_cluster"
-      - name: region_name
-        value: "us-east-1"
-      - name: http_server_port
-        value: "2020"
-      - name: read_from_head
-        value: "Off"
-      - name: READ_FROM_HEAD
-        value: "Off"
-      - name: read_from_tail
-        value: "On"
-      - name: READ_FROM_TAIL
-        value: "On"
-      - name: http_server_toggle
-        value: "On"
+    
 
 
 # apiVersion: argoproj.io/v1alpha1
