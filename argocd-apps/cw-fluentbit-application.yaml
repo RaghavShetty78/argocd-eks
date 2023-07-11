@@ -54,27 +54,7 @@ spec:
   source:
     repoURL: https://github.com/RaghavShetty78/argocd-eks.git
     targetRevision: HEAD
-    path: container-insights
-    plugin:
-      env:
-        - name: cluster_name
-          value: "test_cluster"
-        - name: CLUSTER_NAME
-          value: "test_cluster"
-        - name: region_name
-          value: "us-east-1"
-        - name: http_server_port
-          value: "2020"
-        - name: read_from_head
-          value: "Off"
-        - name: READ_FROM_HEAD
-          value: "Off"
-        - name: read_from_tail
-          value: "On"
-        - name: READ_FROM_TAIL
-          value: "On"
-        - name: http_server_toggle
-          value: "On"
+    path: container-insight
 
   destination: 
     server: https://kubernetes.default.svc
@@ -88,6 +68,12 @@ spec:
       selfHeal: true
       prune: true
       
-  configManagement:
-    configMapRef:
-      name: cwagent-fluentbit-config
+  # configManagement:
+  #   configMapRef:
+  #     name: cwagent-fluentbit-config
+  config:
+    - name: cwagent-fluentbit-config
+      namespace: argocd
+      resource:
+        kind: ConfigMap
+        name: cwagent-fluentbit-config
