@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/RaghavShetty78/argocd-eks.git
     targetRevision: HEAD
-    path: container-insights/cwagent-fluent-bit-quickstart.yaml
+    path: container-insights
     plugin:
       env:
         - name: cluster_name
@@ -29,7 +29,7 @@ spec:
           value: "On"
         - name: http_server_toggle
           value: "On"
-          
+
   destination: 
     server: https://kubernetes.default.svc
     # namespace: aws-otel-eks
